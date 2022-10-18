@@ -6,3 +6,10 @@ import {
   QUIZ_PREV,
   QUIZ_TIMEOUT,
 } from "./actionsTypes";
+
+export const startQuiz = (time)=>{
+    return {
+        type: QUIZ_START,
+        payload: time
+    }
+}
