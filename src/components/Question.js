@@ -128,29 +128,62 @@ const Question = () => {
           </button>
         )}
       </section> */}
+      <section className="">
+        <h3>
+          Question {activeQuestion + 1}/{quizData?.data.length}
+        </h3>
+        <h5>{timer}</h5>
+      </section>
       <section>
         <div>
-          <div className=" font-bold text-green ">
-            <p>this is my an</p>
+          <div className=" font-bold text-green text-center">
+            <p>
+              <p>{data?.question}</p>
+            </p>
           </div>
-          <div className="grid justify-center">
-            <div className=" bg-[#94d6a3] w-96 flex p-4">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-md border-2 rounded-none border-[#4c5a9e] mr-3"
-              />
-              <h3 className="text-start font-bold text-[#21338a] ">
-                this is my{" "}
-              </h3>
-            </div>
-            <div className=" bg-[#94d6a3] w-96 flex p-4">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-md border-2 rounded-none border-[#4c5a9e] mr-3"
-              />
-              <h3 className="text-start font-bold text-[#21338a] ">
-                this is my{" "}
-              </h3>
+          <div>
+            <div className="grid justify-center gap-5">
+              {data?.choices.map((choice, i) => (
+                <div>
+                  <div
+                    className={`${
+                      choice === selected ? `bg-[#94d6a3]` : `bg-[#d0d2d6]`
+                    } w-96 flex p-4 rounded`}
+                  >
+                    <label key={i}>
+                      <input
+                        type="checkbox"
+                        name="answer"
+                        value={choice}
+                        onChange={changeHandler}
+                        checked={choice === selected}
+                        className="checkbox checkbox-md border-2 rounded-none border-[#4c5a9e] mr-3"
+                      />
+                    </label>
+
+                    <h3 className="text-start font-bold text-[#21338a] ">
+                      {choice}
+                    </h3>
+                  </div>
+                </div>
+              ))}
+              <section className="flex gap-10">
+                {activeQuestion <= 0 ? null : (
+                  <button className="btn" onClick={handlePrev}>
+                    Prev
+                  </button>
+                )}
+
+                {activeQuestion + 1 >= quizData?.data.length ? (
+                  <button className="btn" onClick={handleSubmit}>
+                    Submit
+                  </button>
+                ) : (
+                  <button className="btn" onClick={handleNext}>
+                    Next
+                  </button>
+                )}
+              </section>
             </div>
           </div>
         </div>
