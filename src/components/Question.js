@@ -81,53 +81,7 @@ const Question = () => {
     );
   };
   return (
-    <div>
-      {/* <section className="">
-        <h3>
-          Question {activeQuestion + 1}/{quizData?.data.length}
-        </h3>
-        <h5>{timer}</h5>
-      </section>
-      <section className="middleBox">
-        <div className="question">
-          <p>{data?.question}</p>
-          {error && <div>{error}</div>}
-        </div>
-        <div className="option" ref={radiosWrapper}>
-          {data?.choices.map((choice, i) => (
-            <label
-              className={`${choice === selected ? `selected` : `text`}`}
-              key={i}
-            >
-              <input
-                type="radio"
-                name="answer"
-                value={choice}
-                onChange={changeHandler}
-                checked={choice === selected}
-              />
-              {choice}
-            </label>
-          ))}
-        </div>
-      </section>
-      <section className="questionBottom">
-        {activeQuestion <= 0 ? null : (
-          <button className="button" onClick={handlePrev}>
-            Prev
-          </button>
-        )}
-
-        {activeQuestion + 1 >= quizData?.data.length ? (
-          <button className="button nextBtn" onClick={handleSubmit}>
-            Submit
-          </button>
-        ) : (
-          <button className="button nextBtn" onClick={handleNext}>
-            Next
-          </button>
-        )}
-      </section> */}
+    <div className="mx-5">
       <section>
         <div>
           <div className="grid grid-cols-1 text-center">

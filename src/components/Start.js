@@ -27,17 +27,17 @@ const Start = () => {
     }
   }, [minute, second]);
   return (
-    <div className="startBox">
-      <div>
-        <div>
-          <h1>Start the Quiz</h1>
+    <div className="startBox lg:min-h-full pt-10">
+      <div className="w-[400px] shadow-lg bg-white p-20 rounded-md">
+        <div className="text-black">
+          <h1 className="font-bold text-2xl">Start the Quiz</h1>
           <p>Good luck!</p>
           <p>Time:&nbsp;&nbsp;{time}sec</p>
           <section>
             <label htmlFor="">
               <input
                 type="number"
-                className="timeInput"
+                className=" w-10 mr-2 bg-slate-300"
                 value={minute}
                 onChange={(e) => setMinute(parseInt(e.target.value))}
               />
@@ -46,14 +46,14 @@ const Start = () => {
             <label htmlFor="">
               <input
                 type="number"
-                className="timeInput"
+                className=" w-10 mx-2 bg-slate-300"
                 value={second}
                 onChange={(e) => setSecond(parseInt(e.target.value))}
               />
               sec
             </label>
           </section>
-          <button className="startButton" onClick={handleQuizStart}>
+          <button className="btn mt-5" onClick={handleQuizStart}>
             START
           </button>
         </div>
