@@ -133,9 +133,25 @@ const Question = () => {
           <div className=" font-bold text-green ">
             <p>this is my an</p>
           </div>
-          <div className=" bg-[#94d6a3] w-96">
-            <input type="radio" />
-            <h3 className="text-start ">this is my </h3>
+          <div className="grid justify-center">
+            <div className=" bg-[#94d6a3] w-96 flex p-4">
+              <input
+                type="checkbox"
+                className="checkbox checkbox-md border-2 rounded-none border-[#4c5a9e] mr-3"
+              />
+              <h3 className="text-start font-bold text-[#21338a] ">
+                this is my{" "}
+              </h3>
+            </div>
+            <div className=" bg-[#94d6a3] w-96 flex p-4">
+              <input
+                type="checkbox"
+                className="checkbox checkbox-md border-2 rounded-none border-[#4c5a9e] mr-3"
+              />
+              <h3 className="text-start font-bold text-[#21338a] ">
+                this is my{" "}
+              </h3>
+            </div>
           </div>
         </div>
       </section>
