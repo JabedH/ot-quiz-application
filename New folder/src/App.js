@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, Provider } from "react-redux";
+import store from "./redux/store";
 
 import End from "./components/End";
 import Question from "./components/Question";
@@ -23,17 +24,19 @@ const App = () => {
   }, [step]);
 
   return (
-    <div className="app bg-slate-200 h-screen">
-      {step === 1 && <Start />}
-      {step === 2 && <Question />}
-      {step === 3 && (
-        <End
-          data={quizData.data}
-          time={time}
-          onAnswersCheck={() => setShowModal(true)}
-        />
-      )}
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        {step === 1 && <Start />}
+        {step === 2 && <Question />}
+        {step === 3 && (
+          <End
+            data={quizData.data}
+            time={time}
+            onAnswersCheck={() => setShowModal(true)}
+          />
+        )}
+      </div>
+    </Provider>
   );
 };
 

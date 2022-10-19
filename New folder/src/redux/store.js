@@ -21,4 +21,5 @@ if (process.env.NODE_ENV === "development") {
   middleware = [...middleware, thunk];
 }
 
-export const store = createStore(reducers, {}, applyMiddleware(...middleware));
+const store = createStore(reducers, {}, applyMiddleware(...middleware));
+export default store;

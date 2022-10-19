@@ -5,7 +5,7 @@ import {
   prevQuiz,
   submitQuiz,
   timeOut,
-} from "../redux/action/quizAction";
+} from "../redux/actions";
 import quizData from "../data/quiz.json";
 
 const Question = () => {
@@ -81,8 +81,8 @@ const Question = () => {
     );
   };
   return (
-    <div>
-      {/* <section className="">
+    <div className="questionBox">
+      <section className="questionHead">
         <h3>
           Question {activeQuestion + 1}/{quizData?.data.length}
         </h3>
@@ -127,17 +127,6 @@ const Question = () => {
             Next
           </button>
         )}
-      </section> */}
-      <section>
-        <div>
-          <div className=" font-bold text-green ">
-            <p>this is my an</p>
-          </div>
-          <div className=" bg-[#94d6a3] w-96">
-            <input type="radio" />
-            <h3 className="text-start ">this is my </h3>
-          </div>
-        </div>
       </section>
     </div>
   );

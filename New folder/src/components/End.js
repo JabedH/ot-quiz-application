@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { resetQuiz } from "../redux/action/quizAction";
-import { formatTime } from "../utils";
+import { resetQuiz } from "../redux/actions";
 import quizData from "../data/quiz.json";
 import Modal from "./Modal";
 import Trophy from "../assets/images/trophy.png";
