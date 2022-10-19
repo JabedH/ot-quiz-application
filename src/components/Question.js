@@ -128,21 +128,23 @@ const Question = () => {
           </button>
         )}
       </section> */}
-      <section className="">
-        <h3>
-          Question {activeQuestion + 1}/{quizData?.data.length}
-        </h3>
-        <h5>{timer}</h5>
-      </section>
       <section>
         <div>
-          <div className=" font-bold text-green text-center">
-            <p>
-              <p>{data?.question}</p>
-            </p>
+          <div className="grid grid-cols-1 text-center">
+            <div className="flex justify-center my-10">
+              <p className="font-bold text-2xl text-center w-[500px]">
+                {data?.question}
+              </p>
+            </div>
           </div>
           <div>
             <div className="grid justify-center gap-5">
+              <div className="flex justify-between">
+                <h3>
+                  Question {activeQuestion + 1}/{quizData?.data.length}
+                </h3>
+                <h5>Time: {timer}</h5>
+              </div>
               {data?.choices.map((choice, i) => (
                 <div>
                   <div
@@ -167,7 +169,7 @@ const Question = () => {
                   </div>
                 </div>
               ))}
-              <section className="flex gap-10">
+              <section className="flex  justify-between">
                 {activeQuestion <= 0 ? null : (
                   <button className="btn" onClick={handlePrev}>
                     Prev
