@@ -1,29 +1,54 @@
 {
   "data": [
     {
-      "question": "Which of the following is the major element in earth crust?",
-      "choices": ["Silicon", "Oxygen", "Iron", "Aluminium"],
-      "answer": "Oxygen"
+      "question": "Javascript is an _______ language?",
+      "choices": [
+        "Object-Oriented",
+        "Object-Based",
+        "Procedural",
+        "None of the above"
+      ],
+      "answer": "Object-Oriented"
     },
     {
-      "question": "Which among the following country is known as “Land of White Elephant”?",
-      "choices": ["India", "Sri Lanka", "UAE", "Thailand"],
-      "answer": "Thailand"
+      "question": "Which of the following type of variable takes precedence over other if names are same?",
+      "choices": [
+        "global variable",
+        "local variable",
+        "Both of the above.",
+        "None of the above."
+      ],
+      "answer": "local variable"
     },
     {
-      "question": "What is the capital of Austria ?",
-      "choices": ["Graz", "Salzburg", "Innsbruck", "Vienna"],
-      "answer": "Vienna"
+      "question": "Which built-in method reverses the order of the elements of an array?",
+      "choices": [
+        "changeOrder(order)",
+        "reverse()",
+        "sort(order)",
+        "None of the above."
+      ],
+      "answer": "reverse()"
     },
     {
-      "question": "The term Ground Stroke is associated with which of the following games?",
-      "choices": ["Cricket", "Badminton", "Tennis", "Draughts"],
-      "answer": "Tennis"
+      "question": "How do you find the minimum of x and y using JavaScript?",
+      "choices": [" min(x,y);", "Math.min(x,y)", "Math.min(xy)", " min(xy);"],
+      "answer": "Math.min(x,y)"
     },
     {
-      "question": "What is the name of the biggest planet in our solar system ?",
-      "choices": ["Mars", "Jupiter", "Earth", "Mercury"],
+      "question": "What will the code return? Boolean(3 < 7)",
+      "choices": [" true", "false", "NaN", "SyntaxError"],
       "answer": "Jupiter"
+    },
+    {
+      "question": "What is the correct syntax to use an external script called “new.js”?",
+      "choices": [
+        "<script src='new.js'>",
+        "<script name='new.js'>",
+        "<script href='new.js'>",
+        "S<script content='new.js'>"
+      ],
+      "answer": "<script src='new.js'>"
     }
   ]
 }

@@ -77,13 +77,13 @@ const End = () => {
                           className={
                             result.a === quizData?.data[i].answer
                               ? " bg-green-500"
-                              : "bg-red-400"
+                              : " bg-red-200"
                           }
                         >
                           Your answer: {result.a}
                         </p>
                         {result.a !== quizData?.data[i].answer && (
-                          <p className=" bg-orange-400">
+                          <p className=" bg-blue-300">
                             Correct answer: {quizData?.data[i].answer}
                           </p>
                         )}
