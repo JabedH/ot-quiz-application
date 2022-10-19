@@ -8,7 +8,7 @@ import Trophy from "../assets/images/trophy.png";
 
 const End = () => {
   const dispatch = useDispatch();
-  const { answers,time } = useSelector((state) => state.quizReducer);
+  const { answers, time } = useSelector((state) => state.quizReducer);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [modal, setModal] = useState(false);
   useEffect(() => {
@@ -25,7 +25,6 @@ const End = () => {
   };
   return (
     <div className="endBox">
-      <img src={Trophy} className="trophy" alt="" srcset="" />
       <h3>Your results</h3>
       <p>
         {correctAnswers} of {quizData?.data.length}
@@ -39,9 +38,9 @@ const End = () => {
         <strong>Your time:</strong> {time}sec
       </p>
       <section>
-        <button className="button" onClick={() => setModal(true)}>
+        <label htmlFor="my-modal-3" className="btn modal-button">
           Check your answers
-        </button>
+        </label>
         <button
           className="button"
           style={{ marginLeft: "20px" }}
@@ -50,41 +49,56 @@ const End = () => {
           Try again
         </button>
       </section>
-      <Modal show={modal}>
-        <section className="modalBody">
-          <header>
-            <p className="">Your Answers</p>
-            <p  style={{
-              cursor: "pointer"
-            }} onClick={() => setModal(false)}>X</p>
-          </header>
-          <section className="content">
-            <ul>
-              {answers.map((result, i) => (
-                <li key={i} className="mb-6">
-                  <p>
-                    <strong>{result.q}</strong>
-                  </p>
-                  <p
-                    className={
-                      result.a === quizData?.data[i].answer
-                        ? "bg-success"
-                        : "bg-danger"
-                    }
-                  >
-                    Your answer: {result.a}
-                  </p>
-                  {result.a !== quizData?.data[i].answer && (
-                    <p className="bg-warning">
-                      Correct answer: {quizData?.data[i].answer}
+
+      <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box relative">
+          <label
+            htmlFor="my-modal-3"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
+          >
+            ✕
+          </label>
+          <section className="modalBody">
+            <header>
+              <p className="text-black">Your Answers</p>
+              <p
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => setModal(false)}
+              >
+                X
+              </p>
+            </header>
+            <section>
+              <ul>
+                {answers.map((result, i) => (
+                  <li key={i} className="mb-6">
+                    <p>
+                      <strong>{result.q}</strong>
                     </p>
-                  )}
-                </li>
-              ))}
-            </ul>
+                    <p
+                      className={
+                        result.a === quizData?.data[i].answer
+                          ? "bg-success"
+                          : "bg-danger"
+                      }
+                    >
+                      Your answer: {result.a}
+                    </p>
+                    {result.a !== quizData?.data[i].answer && (
+                      <p className="bg-warning">
+                        Correct answer: {quizData?.data[i].answer}
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </section>
           </section>
-        </section>
-      </Modal>
+        </div>
+      </div>
     </div>
   );
 };

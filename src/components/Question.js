@@ -131,7 +131,7 @@ const Question = () => {
       <section>
         <div>
           <div className="grid grid-cols-1 text-center">
-            <div className="flex justify-center my-10">
+            <div className="flex justify-center my-14">
               <p className="font-bold text-2xl text-center w-[500px]">
                 {data?.question}
               </p>
