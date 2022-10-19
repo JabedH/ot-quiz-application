@@ -3,14 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { resetQuiz } from "../redux/action/quizAction";
 import { formatTime } from "../utils";
 import quizData from "../data/quiz.json";
-import Modal from "./Modal";
 import Trophy from "../assets/images/trophy.png";
 
 const End = () => {
   const dispatch = useDispatch();
   const { answers, time } = useSelector((state) => state.quizReducer);
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [modal, setModal] = useState(false);
   useEffect(() => {
     let correct = 0;
     answers.forEach((result, index) => {

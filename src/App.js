@@ -14,7 +14,6 @@ const App = () => {
   const { step, answers } = useSelector((state) => state?.quizReducer);
   console.log(step);
   console.log(answers);
-  const [showModal, setShowModal] = useState(false);
   const [time, setTime] = useState(0);
   useEffect(() => {
     if (step === 3) {
@@ -30,7 +29,7 @@ const App = () => {
         <End
           data={quizData.data}
           time={time}
-          onAnswersCheck={() => setShowModal(true)}
+          
         />
       )}
     </div>
